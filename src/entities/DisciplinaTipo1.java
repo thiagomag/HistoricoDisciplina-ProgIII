@@ -1,4 +1,6 @@
-package src;
+package src.entities;
+
+import java.util.Scanner;
 
 public class DisciplinaTipo1 extends Disciplina{
 
@@ -28,5 +30,14 @@ public class DisciplinaTipo1 extends Disciplina{
 
     public double getPf() {
         return pf;
+    }
+
+    static Disciplina makeDisciplinaTipo1(Scanner input, int codigo, String nome, String professor, int periodo,
+                                                  int ano, int semestre, int creditos) {
+        System.out.println("Informe o valor da PP");
+        double pp = input.nextDouble();
+        System.out.println("Informe o valor da PF");
+        double pf = input.nextDouble();
+        return new DisciplinaTipo1(nome, professor, codigo, periodo, ano, creditos, semestre, pp, pf);
     }
 }
