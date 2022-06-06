@@ -7,9 +7,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Historico historico = new Historico();
-        menu(historico);
+        try {
+            menu(historico);
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrompida");
+        }
     }
 
     private static void menu(Historico historico) throws InterruptedException {
